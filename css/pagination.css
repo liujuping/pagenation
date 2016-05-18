@@ -1,0 +1,77 @@
+.pagination {
+    padding: 10px 0;
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    background-color: rgb(235, 238, 244);
+    /*
+    火狐下阻止双击选择文本
+    */
+    -moz-user-select: none;
+}
+.pagination .page-before,
+.pagination .page-next,
+.pagination .page-item {
+    display: inline-block;
+    padding: 8px 14px;
+    margin: 0 6px;
+    line-height: 1em;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid rgb(211, 212, 214);
+    cursor: pointer;
+}
+.pagination .page-before:hover,
+.pagination .page-next:hover,
+.pagination .page-item:hover {
+    border: 1px solid rgb(0, 197, 183);
+    color: rgb(0, 197, 183);
+}
+.pagination .page-before {
+    padding-left: 6px;
+}
+.pagination .page-next {
+    padding-right: 6px;
+}
+.pagination .page-item[data-status=select] {
+    color: #fff;
+    background-color: rgb(0, 197, 183);
+}
+.pagination .page-before[data-status=prevent],
+.page-item[data-status=select] + .page-next {
+    border: 1px solid rgb(211, 212, 214);
+    color: rgb(217, 217, 217);
+}
+
+.pagination .page-item[data-hide=hide] {
+    display: none;
+}
+/*
+ *   用css选择器控制hide－icon的显示与隐藏
+ *   由于每次隐藏都会先隐藏第二或倒数第二个节点，
+ *   如果这两个节点隐藏了，则对应的hide－icon显示出来
+ */
+.hide-icon {
+    display: none;
+}
+.page-item[data-hide=hide]+.hide-icon {
+    display: inline-block;
+}
+
+@media screen and (max-width: 640px) {
+    .pagination {
+        font-size: 14px;
+    }
+    .pagination .page-before,
+    .pagination .page-next,
+    .pagination .page-item {
+        padding: 8px 10px;
+        margin: 0 3px;
+    }
+    .pagination .page-before {
+        padding-left: 3px;
+    }
+    .pagination .page-next {
+        padding-right: 3px;
+    }
+}

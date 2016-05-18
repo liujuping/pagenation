@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/pagination.css">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <style rel="stylesheet">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .footer0 {
+            margin: 20px auto;
+        }
+        .footer1 {
+            width: 979px;
+            margin: 20px auto;
+        }
+        .footer2 {
+            width: 639px;
+            margin: 20px auto;
+        }
+        .footer3{
+            width: 419px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="footer0" class="footer0"></div>
+<div id="footer1" class="footer1"></div>
+<div id="footer2" class="footer2"></div>
+<div id="footer3" class="footer3"></div>
+<div></div>
+
+<script src="js/pagination.js"></script>
+
+<script>
+    /*
+    * 加了一个参数，为了方便计算其父元素的width值，来计算显示的page数目
+    * pagination返回的是一个dom节点，通过已有节点append来显示到页面中
+    * 要放置属性的父元素需要先设置宽度
+    * */
+    document.getElementById('footer0').appendChild(pagination(16,'footer0'));
+    document.getElementById('footer1').appendChild(pagination(25,'footer1'));
+    document.getElementById('footer2').appendChild(pagination(25,'footer2'));
+    document.getElementById('footer3').appendChild(pagination(20,'footer3'));
+</script>
+</body>
+</html>
